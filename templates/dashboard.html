@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tableau de bord</title>
+</head>
+<body>
+    <h1>Bienvenue, {{ utilisateur.nom }}</h1>
+    <p>Email : {{ utilisateur.email }}</p>
+    <p>Rôle : {{ utilisateur.role.nom }}</p>
+    <p>Groupes :</p>
+    <ul>
+        {% for groupe in utilisateur.groupes.all %}
+            <li>{{ groupe.nom }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'deconnexion' %}">Déconnexion</a>
+</body>
+</html>
